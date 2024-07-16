@@ -1,0 +1,109 @@
+/* in between pc and tab -> carousel 이슈 */
+/* tab1 */
+/* @media (min-width:1024px) and (max-width:1820px){ */
+@media (min-width:1024px) and (max-width:1360px){
+    /* 아티스트 휠 너무 겹쳐짐 해소? */
+    .artist{display: none;}
+    .artist_mo{display: none;}
+    .artist_tab{display: none;}
+    .artist_tab1{
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        background: #000;
+        color: #fff;
+    }
+    .title .fontMain{
+        padding: 50px 0;
+        text-align: center;
+    }
+    .artistLeft{
+        /* position: relative; */
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .artistRight {
+        width: 100%;
+        height: auto;
+        top: unset;
+        right: unset;
+        bottom: 10px;
+    }
+    .station_artist{
+        width: 100%;
+        height: 650px;
+    }
+    .tap_ar_mo {
+        display: flex;
+        justify-content: center;
+    }
+    .tap_ar_mo>li>a {
+        display: flex;
+        padding: 6px 15px;
+        border: 1px solid #fff;
+        border-radius: 40px;
+        margin: 0 10px;
+    }
+    .tap_ar_mo>li>a.on{
+        background: #ffa200;
+        color: #fff;
+        border: 1px solid transparent;
+    }
+    .train_artist>li{
+        /* text-align: center; */
+        transition: all .5s ease 0s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .train_artist>li.swiper-slide-active {
+        transform:scale(1.3);
+        transition: all .5s ease 0s;
+    }
+    .train_artist>li.swiper-slide-active img{
+        padding: 10px;
+        border: 1px solid #ffa200;
+        border-radius: 50%;
+    }
+
+    .album_list {
+        width: 100%;
+        height: calc(100% - 136px);
+        position: relative;
+    }
+    .album_info {
+        width: 60%;
+        height: auto;
+        bottom: 10%;
+        left: 50%;
+        border: 1px solid red;
+        /* margin: 0 auto; */
+        /* margin-top: 50px; */
+        position: absolute;
+        bottom: 20px;
+        transform: translateX(-50%);
+    }
+    .album_list .album_btn .btn_lt {
+        left: 10%;
+        top: 567px;
+    }
+    .album_list .album_btn .btn_rt {
+        right: 10%;
+        top: 567px;
+    }
+
+    .news_mo{display: none;}
+
+    .news_list .news_info {
+        padding: 0 20px;
+    }
+    .news_list>li {
+        height: 450px;
+    }
+}
+
+
+
+
