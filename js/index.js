@@ -16,6 +16,18 @@ $(document).ready(function(){
     $(".btn_gnb").click(function(){
         $("body").toggleClass("disabled");
     })
+        // gnb_list>li>a 클릭 toggle
+        let state = false;
+        $(".gnb_list>li>a").click(function(){
+            let gnbDepths = $(this).siblings(".gnb_depths");
+            if(state==false){
+                $(gnbDepths).addClass("on")
+                state = true
+            }else{
+                $(gnbDepths).removeClass("on")
+                state = false
+            }
+        })
 
     ////////////// scrollTop
     let scrTop = 0;
@@ -185,7 +197,7 @@ $(document).ready(function(){
         $('.video .swiper-slide').each(function(index) {
                     
             const $iframe = $(this).find('iframe');
-            console.log(swiper2.activeIndex)
+            // console.log(swiper2.activeIndex)
             const src = $iframe.attr('src');
             if (index === swiper2.activeIndex) {
                 $iframe.attr('src', src.replace('autoplay=0', 'autoplay=1'));
@@ -292,7 +304,6 @@ $(document).ready(function(){
         artistName(carousel_count)
     });
 
-    ////////////////////////////////////////////해상도 마다 각기 다르게 기능을 줘야하나? html 이 분리되어 있어도 클라스가 같으면 되지 않나?/////////////////////////////
     /////////////////아티스트 tab1 버전 
     let swiper1 = new Swiper("#station_artist1", {
         slidesPerView: 2,
@@ -329,7 +340,7 @@ $(document).ready(function(){
         $(".tap_ar_mo>li").click(function(e) {
             e.preventDefault();
             let clickedIndex = $(this).index();
-            console.log(clickedIndex);
+            // console.log(clickedIndex);
 
             $(".tap_ar_mo>li").removeClass("on");
             $(this).addClass("on");
@@ -364,10 +375,10 @@ $(document).ready(function(){
         newsMore_add = 1; //모바일
     }
     function inputNewsList(arrayNews,views){
-        console.log(views)
+        // console.log(views)
         let result = "";
         for(let i=0 ; i<views ; i++){
-            console.log(i, arrayNews.length)
+            // console.log(i, arrayNews.length)
 
             result+=`<li>
             <div class="news_h">

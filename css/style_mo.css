@@ -76,7 +76,6 @@
         left: 0;
         color: #fff;
         display: block;
-        transition: all 2s ease 0s;
         overflow: hidden;
         width: 100%;
         padding: 0 50px;
@@ -98,7 +97,7 @@
         font-weight: bold;
         margin-bottom: 10px;
     }
-    .gnb_list>li>ul{
+    .gnb_depths{
         border: 1px solid red;
         display: block;
         height: 0;
@@ -107,7 +106,13 @@
         overflow: hidden;
         transition: all .5s ease 0s;
     }
-    .gnb_list>li>ul>li>a {
+    .gnb_depths.on{
+        height: auto;
+        opacity: 1;
+        pointer-events: auto;
+        margin-bottom: 20px;
+    }
+    .gnb_depths>li>a {
         width: 150px;
         height: 30px;
         display: flex;
@@ -115,12 +120,12 @@
         justify-content: flex-start;
         padding-left: 20px;
     }
-    .gnb_list>li:hover>ul{
+    /* .gnb_list>li:hover>ul{
         height: auto;
         opacity: 1;
         pointer-events: auto;
         margin-bottom: 20px;
-    }
+    } */
     .logo {
         margin-left: 20px;
     }
@@ -153,14 +158,27 @@
         width: 100%;
         height: 100vh;
         overflow: hidden;
-        border-bottom: 1px solid #ffffff6c;
     }
     .station{
         width: 100%;
-        height: 100%;
+        height: 100vh;
         position: relative;
-        overflow: hidden;
-        display: flex;
+    }
+    .banner .video_station{
+        width: 100%;
+        height: auto;
+    }
+    .train{
+        transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+    }
+    .train>li{
+        position: relative;
+    }
+    .train>li video{
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        line-height: 0;
     }
     .station button{
         width: 60px;
@@ -259,19 +277,6 @@
         left: 0;
         background: #00000075;
         z-index: 1; 
-    }
-    .video li{
-        overflow: hidden;
-        position: relative;
-    }
-    .video iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-        object-fit: cover;
     }
 
     /* 아티스트 영역 */

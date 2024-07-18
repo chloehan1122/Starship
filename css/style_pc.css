@@ -138,7 +138,7 @@
         box-sizing: border-box;
     }
     .gnb_list.on {
-        height: 500px;
+        height: auto;
         opacity: 1;
         pointer-events: all;
     }
@@ -169,14 +169,29 @@
     /* 배너영역 */
     .banner{
         width: 100%;
-        height: auto;
+        height: 100vh;
         overflow: hidden;
     }
     .station{
         width: 100%;
-        height: auto;
+        height: 100vh;
         position: relative;
-        overflow: hidden;
+    }
+    .banner .video_station{
+        width: 100%;
+        height: auto;
+    }
+    .train{
+        transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1) 0s;
+    }
+    .train>li{
+        position: relative;
+    }
+    .train>li video{
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        line-height: 0;
     }
     .station button{
         width: 60px;
@@ -272,20 +287,6 @@
         left: 0;
         background: #00000075;
         z-index: 1; 
-    }
-    .video li{
-        overflow: hidden;
-        position: relative;
-        padding-top: 56.25%;
-    }
-    .video iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-        object-fit: cover;
     }
 
     /* 아티스트 영역 */
