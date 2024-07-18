@@ -7,17 +7,31 @@ function getDeg(count){
 
 $(document).ready(function(){
 
+    let state = false;
+
     ////////////// 스크롤탑 방지
     $('a.no-scroll').on('click', function(event){
         event.preventDefault();
     });
     
+    ///////////// 언어 변경 클릭 toggle
+    $(".lang").click(function(){
+        if(state==false){
+            $(".lang_link").addClass("on")
+            $(".lang").addClass("on")
+            state = true
+        }else{
+            $(".lang_link").removeClass("on")
+            $(".lang").removeClass("on")
+            state = false
+        }
+    })
+
     ////////////// 마우스 올렸을 때 다른 스크롤 구현 금지
     $(".btn_gnb").click(function(){
         $("body").toggleClass("disabled");
     })
         // gnb_list>li>a 클릭 toggle
-        let state = false;
         $(".gnb_list>li>a").click(function(){
             let gnbDepths = $(this).siblings(".gnb_depths");
             if(state==false){
@@ -383,7 +397,6 @@ $(document).ready(function(){
             result+=`<li>
             <div class="news_h">
                 <a class="newsOn" href="#"><img src="./img/${arrayNews[i].nThumb}" alt="${arrayNews[i].nTitle}"></a>
-                <a href="#" class="no-scroll newsBtn">자세히 보기</a>
             </div>
             <div class="news_info">
                 <h2>${arrayNews[i].nTitle}</h2>
@@ -391,6 +404,7 @@ $(document).ready(function(){
                 ${arrayNews[i].nDesc}
                 </p>
                 <span>${arrayNews[i].nDate}</span>
+                <div class="news_d"><a href="#" class="no-scroll newsBtn">자세히 보기</a></div>
             </div>
         </li>`            
             if(i==arrayNews.length-1){

@@ -120,12 +120,6 @@
         justify-content: flex-start;
         padding-left: 20px;
     }
-    /* .gnb_list>li:hover>ul{
-        height: auto;
-        opacity: 1;
-        pointer-events: auto;
-        margin-bottom: 20px;
-    } */
     .logo {
         margin-left: 20px;
     }
@@ -134,8 +128,7 @@
         width: 50%;
     }
     .langs{
-        display: flex;
-        align-items: center;
+        position: relative;
     }
     .lang {
         color: #fff;
@@ -148,10 +141,26 @@
         font-size: 13px;
     }
     .lang_link {
-        /* 클릭하면 KO -> EN -> CN -> JP 순으로 바뀌게 */
         display: none;
+        overflow: hidden;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        color: #fff;
+        height: 100px;
+        /* transition: all 0.5s ease 0s; */
+        font-size: 13px;
+        transform: translateX(-80%);
     }
-
+    .lang_link.on{
+        display: block;
+    }
+    .lang.on{
+        border-color: transparent;
+    }
+    .lang_link>li{
+        margin-bottom: 5px;
+    }
     /* banner 영역 */
     .station_btn{display: none;}
     .banner{
@@ -636,7 +645,6 @@
      .news_h {
          width: 100%;
          height: auto;
-         position: relative;
          line-height: 0;
     }
     .news_h>a {
@@ -651,30 +659,19 @@
     .newsOn.clear{
          border-radius: 0;
     }
-    a.newsBtn{
-         height: auto;
-         width: 100px;
-         padding: 10px 20px;
-         border-radius: 25px;
-         position: absolute;
-         top: 50%;
-         left: 50%;
-         opacity: 0;
-         transform: translate(-50%, -50%);
-         background: #ffa200;
-         color: #fff;
-         transition: all .2s ease 0s;
-         line-height: 1;
+    .news_d{
+        margin-top: 10px;
     }
-    .news_h>.newsOn:hover + a{
-         opacity: 1;
-    }
-    .news_h>.newsOn:hover img{
-         filter: grayscale(1);
-         scale: 1.05;
-    }
-    .news_h img{
-         transition: all .2s ease 0s;
+    a.newsBtn {
+        display: inline-block;
+        height: auto;
+        width: 100px;
+        padding: 8px 10px;
+        border-radius: 25px;
+        opacity: 1;
+        background: #ffa200;
+        color: #fff;
+        font-size: 12px;
     }
     .news_list .news_info {
         text-align: center;
