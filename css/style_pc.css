@@ -217,12 +217,15 @@
         top: 48%;
         right: 120px;
     }
-    .station_btn .swiper-button-next:after {
-        content: '';
+    .station_btn .swiper-button-prev:after {
+        content: 'prev';
         /* swiper :after 무효화 */
     }
     .station_btn .swiper-button-next:before {
         content: 'next';
+    }
+    .station_btn .swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+        content: '';
     }
     .station_btn .swiper-button-next:before, .station_btn .swiper-button-prev:after {
         font-family: "klavika";
@@ -234,7 +237,8 @@
         transition: letter-spacing .5s ease 0s;
         transform-origin: left center;
     }
-    .station_btn:hover .swiper-button-next:before{
+    .station_btn:hover .swiper-button-next:before,
+    .station_btn:hover .swiper-button-prev:after{
         letter-spacing: 5px;
     }
     .banner_info{
